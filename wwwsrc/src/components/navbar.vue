@@ -43,6 +43,7 @@ export default {
       if (this.$auth.isAuthenticated) {
         setBearer(this.$auth.bearer);
         this.$store.dispatch("getProfile");
+        this.$store.dispatch("getProfileBlogs", this.$auth.userInfo.id)
       }
     },
     async logout() {

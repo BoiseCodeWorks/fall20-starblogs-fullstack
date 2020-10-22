@@ -52,5 +52,18 @@ namespace StarBlogs.Controllers
         return BadRequest(e.Message);
       }
     }
+
+    [HttpGet("{id}")]
+    public ActionResult<Profile> GetProfile(string id)
+    {
+      try
+      {
+        return Ok(_ps.GetProfileEmailById(id));
+      }
+      catch (System.Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
   }
 }
